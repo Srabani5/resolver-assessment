@@ -1,0 +1,25 @@
+<suite name="MyTestSuite">
+    <test name="TestonFirefox">
+        <parameter name="browser" value="firefox" />
+        <classes>
+            <class name="com.resolver.testMethods.Testsetup" />
+        </classes>
+    </test>
+        <test name="TestonChrome">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="com.resolver.testMethods.Testsetup" />
+        </classes>
+    </test>
+        <test name="TestonEdge">
+        <parameter name="browser" value="edge" />
+        <classes>
+            <class name="com.resolver.testMethods.Testsetup" />
+        </classes>
+    </test>
+</suite>
+
+
+
+
+
