@@ -1,27 +1,14 @@
 package com.resolver.testMethods;
 
-import java.io.File;
-import java.io.IOException;
-import java.time.Duration;
-
-import java.util.concurrent.TimeUnit;
-
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import org.testng.annotations.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.testng.Assert;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
-
 import com.resolver.uiPackage.Test1;
 import com.resolver.uiPackage.Test2;
 import com.resolver.uiPackage.Test3;
@@ -31,102 +18,106 @@ import com.resolver.uiPackage.Test6;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-
-
-
+/**
+ * This class contains test methods and setup methods for test execution.
+ */
 public class Testsetup {
 	public static WebDriver driver;
+	private static final String HOME_PAGE = "C:\\eclipse-workspace\\resolver-assessment\\src\\main\\resources\\QE-index.html";
 
+    /**
+     * This method sets up the WebDriver and navigates to the test application.
+     *
+     * @param browser The name of the browser to use for testing.
+     * @throws Exception If an incorrect browser is provided.
+     */
 	@BeforeTest
 	@Parameters("browser")
 	public void beforeTest(@Optional("chrome") String browser) throws Exception {
-		if (browser.equalsIgnoreCase("firefox")) {
-			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
-		} else if (browser.equalsIgnoreCase("chrome")) {
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-		} else if (browser.equalsIgnoreCase("Edge")) {
-			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
-		} else {
-			throw new Exception("Incorrect Browser");
+		try {
+			if (browser.equalsIgnoreCase("firefox")) {
+				WebDriverManager.firefoxdriver().setup();
+				driver = new FirefoxDriver();
+			} else if (browser.equalsIgnoreCase("chrome")) {
+				WebDriverManager.chromedriver().setup();
+				driver = new ChromeDriver();
+			} else if (browser.equalsIgnoreCase("Edge")) {
+				WebDriverManager.edgedriver().setup();
+				driver = new EdgeDriver();
+			} else {
+				throw new Exception("Incorrect Browser");
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
 
-		//driver = new ChromeDriver();
-		//driver = new EdgeDriver();
-		//driver = new InternetExplorerDriver();
-		//driver = new FirefoxDriver();
-		//public static homepage = "C:\\eclipse-workspace\\assessmentTest\\src\\main\\resources\\QE-index.html";
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		driver.get("C:\\eclipse-workspace\\assessmentTest\\src\\main\\resources\\QE-index.html");
+		driver.get(HOME_PAGE);
 	}
-
+	
+    /**
+     * Test method for validating Test1.
+     */
 	@Test
 	public void test1Validation() {
 		Test1 test1=new Test1(driver);
 		test1.assertTest1();
-		test1.sendEmailPassword("Bonnie", "password");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		captureScreenshot("test1Validation");
 	}
-
+	
+    /**
+     * Test method for validating Test2.
+     */
 	@Test
 	public void test2Validation() {
 		Test2 test2=new Test2(driver);
 		test2.assertTest2();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		captureScreenshot("test2Validation");
 	}
-
+	
+    /**
+     * Test method for validating Test3.
+     */
 	@Test
 	public void test3Validation() {
 		Test3 test3=new Test3(driver);
 		test3.assertTest3();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		captureScreenshot("test3Validation");
 	}
-
+	
+    /**
+     * Test method for validating Test4.
+     */
 	@Test
-	public void test4Validation() {
+	public void test4Validation() { 
 		Test4 test4=new Test4(driver);
 		test4.assertTest4();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		captureScreenshot("test4Validation");
-	}
 
+	}
+	
+    /**
+     * Test method for validating Test5.
+     */
 	@Test
 	public void test5Validation() {
 		Test5 test5=new Test5(driver);
 		test5.assertTest5();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		captureScreenshot("test5Validation");
 	}
-
+	
+    /**
+     * Test method for validating Test6.
+     */
 	@Test
 	public void test6Validation() {
 		Test6 test6=new Test6(driver);
 		test6.assertTest6();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		captureScreenshot("test6Validation");
-	}
-
-	@AfterTest
-	public void afterTest() {
-		driver.quit();
 	}
 	
-	// Utility method to capture a screenshot
-	public void captureScreenshot(String screenshotName) {
-	    try {
-	        TakesScreenshot ts = (TakesScreenshot) driver;
-	        File source = ts.getScreenshotAs(OutputType.FILE);
-	        File destination = new File("C:\\eclipse-workspace\\assessmentTest\\test-output\\" + screenshotName + ".png");
-	        FileUtils.copyFile(source, destination);
-	        System.out.println("Screenshot saved to: " + destination.getAbsolutePath());
-	    } catch (IOException e) {
-	        e.printStackTrace();
-	    }
+    /**
+     * This method is executed after all tests are complete and performs cleanup actions.
+     */
+	@AfterTest
+	public void afterTest() {
+		//test4.captureScreenshotfromPage("test4Validation");
+		driver.quit();
 	}
+
+
 }
