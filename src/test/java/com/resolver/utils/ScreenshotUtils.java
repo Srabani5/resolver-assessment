@@ -18,7 +18,7 @@ public class ScreenshotUtils {
 	public void captureScreenshotfromPage(WebElement element, String screenshotName) {
 		try {
 			File source = element.getScreenshotAs(OutputType.FILE);
-			File destination = new File("C:\\eclipse-workspace\\resolver-assessment\\test-output\\" + screenshotName + ".png");
+			File destination = new File(""+ screenshotName + ".png");
 			FileUtils.copyFile(source, destination);
 			System.out.println("Screenshot saved to Path " + screenshotName + ".png");
 		} catch (Exception e) {

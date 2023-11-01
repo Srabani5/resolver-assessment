@@ -14,49 +14,47 @@ import com.resolver.utils.ScreenshotUtils;
  */
 public class Test1 {
 	WebDriver driver;
-	ScreenshotUtils screenshot;
 	WebElement email;
 	WebElement password;
 	WebElement signinButton;
-	WebElement screenshotpart;
 	WebDriverWait wait;
+	WebElement screenshotpart;
+	ScreenshotUtils screenshot;
 
-	 /**
-     * Initializes the Test1 Page Object with the WebDriver and locates elements.
-     *
-     * @param driver The WebDriver used for the test.
-     */
+	/**
+	 * Initializes the Test1 Page Object with the WebDriver and locates elements.
+	 *
+	 * @param driver The WebDriver used for the test.
+	 */
 	public Test1(WebDriver driver){
 		this.driver=driver;
 		email = driver.findElement( By.id("inputEmail"));
 		password = driver.findElement( By.id("inputPassword"));
 		signinButton = driver.findElement(By.xpath("//button[contains(text(),'Sign in')]"));
-		screenshotpart=driver.findElement( By.xpath("//div[@id='test-1-div']"));
+		screenshotpart = driver.findElement( By.xpath("//div[@id='test-1-div']"));
 	}
 
-	 /**
-     * Performs the validation for Test1, including element visibility checks and capturing a screenshot.
-     */
+	/**
+	 * Performs the validation for Test1, including element visibility checks, text content checks, and capturing a screenshot.
+	 */
 	public void assertTest1() {
-		
 		// Set up an explicit wait with a 40-second timeout to wait for element visibility.
 		wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 		wait.until(ExpectedConditions.visibilityOf(screenshotpart));
-		// Check if email address and password inputs are displayed.
+		
+		//Assert that both the email address and password inputs are present as well as the login button
 		Assert.assertEquals(true, email.isDisplayed());
 		System.out.println("Email Input is displayed – Assert passed");
 		Assert.assertEquals(true, password.isDisplayed());
 		System.out.println("Password Input is displayed – Assert passed");
-		
-		// Check if Log In button is displayed.
 		Assert.assertEquals(true, signinButton.isDisplayed());
 		System.out.println("Sign In button is displayed – Assert passed");
 		
-		//Enter in an email address and password combination
+		//Enter in an email address and password combination into the respective fields
 		email.sendKeys("Bonnie");
 		password.sendKeys("password");
 		
-		// Initialize ScreenshotUtils and capture a screenshot of the specified element.
+		// Capture a screenshot of the Test1 div.
 		screenshot = new ScreenshotUtils();
 		screenshot.captureScreenshotfromPage(screenshotpart, "test1Validation");
 	}

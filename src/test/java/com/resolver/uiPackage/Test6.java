@@ -66,6 +66,6 @@ public class Test6 {
 		
 		// Initialize ScreenshotUtils and capture a screenshot of the specified element.
 		screenshot = new ScreenshotUtils();
-		screenshot.captureScreenshotfromPage(screenshotpart, "test1Validation");
+		screenshot.captureScreenshotfromPage(screenshotpart, "test6Validation");
 	}
 }

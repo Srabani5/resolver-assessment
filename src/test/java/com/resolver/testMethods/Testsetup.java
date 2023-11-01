@@ -15,7 +15,7 @@ import com.resolver.uiPackage.Test3;
 import com.resolver.uiPackage.Test4;
 import com.resolver.uiPackage.Test5;
 import com.resolver.uiPackage.Test6;
-
+import com.resolver.utils.FileUtil;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 /**
@@ -23,8 +23,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  */
 public class Testsetup {
 	public static WebDriver driver;
-	private static final String HOME_PAGE = "C:\\eclipse-workspace\\resolver-assessment\\src\\main\\resources\\QE-index.html";
+	//The url of the home page
+	public static String HOME_PAGE = FileUtil.getResourceFile("/QE-index.html").toString();
 
+	
+	//private static final String HOME_PAGE = "C:\\eclipse-workspace\\resolver-assessment\\src\\main\\resources\\QE-index.html";
     /**
      * This method sets up the WebDriver and navigates to the test application.
      *
@@ -50,7 +53,6 @@ public class Testsetup {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-
 		driver.manage().window().maximize();
 		driver.get(HOME_PAGE);
 	}
