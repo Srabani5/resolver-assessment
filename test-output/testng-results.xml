@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="18" passed="18" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-11-15T12:43:09 EST" name="MyTestSuite" finished-at="2023-11-15T12:43:25 EST" duration-ms="16511">
+    <groups>
+    </groups>
+    <test started-at="2023-11-15T12:43:09 EST" name="TestonFirefox" finished-at="2023-11-15T12:43:15 EST" duration-ms="5951">
+      <class name="tests.TestRun">
+        <test-method is-config="true" signature="beforeTest(java.lang.String)[pri:0, instance:tests.TestRun@25be7b63]" started-at="2023-11-15T12:43:09 EST" name="beforeTest" finished-at="2023-11-15T12:43:12 EST" duration-ms="3420" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="runTest1()[pri:0, instance:tests.TestRun@25be7b63]" started-at="2023-11-15T12:43:12 EST" name="runTest1" finished-at="2023-11-15T12:43:12 EST" duration-ms="248" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTest1 -->
+        <test-method signature="runTest2()[pri:0, instance:tests.TestRun@25be7b63]" started-at="2023-11-15T12:43:12 EST" name="runTest2" finished-at="2023-11-15T12:43:12 EST" duration-ms="99" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTest2 -->
+        <test-method signature="runTest3()[pri:0, instance:tests.TestRun@25be7b63]" started-at="2023-11-15T12:43:12 EST" name="runTest3" finished-at="2023-11-15T12:43:13 EST" duration-ms="521" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTest3 -->
+        <test-method signature="runTest4()[pri:0, instance:tests.TestRun@25be7b63]" started-at="2023-11-15T12:43:13 EST" name="runTest4" finished-at="2023-11-15T12:43:13 EST" duration-ms="31" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTest4 -->
+        <test-method signature="runTest5()[pri:0, instance:tests.TestRun@25be7b63]" started-at="2023-11-15T12:43:13 EST" name="runTest5" finished-at="2023-11-15T12:43:14 EST" duration-ms="792" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTest5 -->
+        <test-method signature="runTest6()[pri:0, instance:tests.TestRun@25be7b63]" started-at="2023-11-15T12:43:14 EST" name="runTest6" finished-at="2023-11-15T12:43:14 EST" duration-ms="28" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTest6 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestRun@25be7b63]" started-at="2023-11-15T12:43:14 EST" name="tearDown" finished-at="2023-11-15T12:43:15 EST" duration-ms="755" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.TestRun -->
+    </test> <!-- TestonFirefox -->
+    <test started-at="2023-11-15T12:43:15 EST" name="TestonChrome" finished-at="2023-11-15T12:43:20 EST" duration-ms="5752">
+      <class name="tests.TestRun">
+        <test-method is-config="true" signature="beforeTest(java.lang.String)[pri:0, instance:tests.TestRun@6a8658ff]" started-at="2023-11-15T12:43:15 EST" name="beforeTest" finished-at="2023-11-15T12:43:16 EST" duration-ms="1060" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="runTest1()[pri:0, instance:tests.TestRun@6a8658ff]" started-at="2023-11-15T12:43:16 EST" name="runTest1" finished-at="2023-11-15T12:43:16 EST" duration-ms="259" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTest1 -->
+        <test-method signature="runTest2()[pri:0, instance:tests.TestRun@6a8658ff]" started-at="2023-11-15T12:43:16 EST" name="runTest2" finished-at="2023-11-15T12:43:16 EST" duration-ms="164" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTest2 -->
+        <test-method signature="runTest3()[pri:0, instance:tests.TestRun@6a8658ff]" started-at="2023-11-15T12:43:16 EST" name="runTest3" finished-at="2023-11-15T12:43:16 EST" duration-ms="211" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTest3 -->
+        <test-method signature="runTest4()[pri:0, instance:tests.TestRun@6a8658ff]" started-at="2023-11-15T12:43:16 EST" name="runTest4" finished-at="2023-11-15T12:43:16 EST" duration-ms="61" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTest4 -->
+        <test-method signature="runTest5()[pri:0, instance:tests.TestRun@6a8658ff]" started-at="2023-11-15T12:43:16 EST" name="runTest5" finished-at="2023-11-15T12:43:20 EST" duration-ms="3781" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTest5 -->
+        <test-method signature="runTest6()[pri:0, instance:tests.TestRun@6a8658ff]" started-at="2023-11-15T12:43:20 EST" name="runTest6" finished-at="2023-11-15T12:43:20 EST" duration-ms="47" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTest6 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestRun@6a8658ff]" started-at="2023-11-15T12:43:20 EST" name="tearDown" finished-at="2023-11-15T12:43:20 EST" duration-ms="160" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.TestRun -->
+    </test> <!-- TestonChrome -->
+    <test started-at="2023-11-15T12:43:20 EST" name="TestonEdge" finished-at="2023-11-15T12:43:25 EST" duration-ms="4790">
+      <class name="tests.TestRun">
+        <test-method is-config="true" signature="beforeTest(java.lang.String)[pri:0, instance:tests.TestRun@333d4a8c]" started-at="2023-11-15T12:43:20 EST" name="beforeTest" finished-at="2023-11-15T12:43:21 EST" duration-ms="1189" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="runTest1()[pri:0, instance:tests.TestRun@333d4a8c]" started-at="2023-11-15T12:43:21 EST" name="runTest1" finished-at="2023-11-15T12:43:22 EST" duration-ms="250" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTest1 -->
+        <test-method signature="runTest2()[pri:0, instance:tests.TestRun@333d4a8c]" started-at="2023-11-15T12:43:22 EST" name="runTest2" finished-at="2023-11-15T12:43:22 EST" duration-ms="138" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTest2 -->
+        <test-method signature="runTest3()[pri:0, instance:tests.TestRun@333d4a8c]" started-at="2023-11-15T12:43:22 EST" name="runTest3" finished-at="2023-11-15T12:43:22 EST" duration-ms="212" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTest3 -->
+        <test-method signature="runTest4()[pri:0, instance:tests.TestRun@333d4a8c]" started-at="2023-11-15T12:43:22 EST" name="runTest4" finished-at="2023-11-15T12:43:22 EST" duration-ms="60" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTest4 -->
+        <test-method signature="runTest5()[pri:0, instance:tests.TestRun@333d4a8c]" started-at="2023-11-15T12:43:22 EST" name="runTest5" finished-at="2023-11-15T12:43:25 EST" duration-ms="2703" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTest5 -->
+        <test-method signature="runTest6()[pri:0, instance:tests.TestRun@333d4a8c]" started-at="2023-11-15T12:43:25 EST" name="runTest6" finished-at="2023-11-15T12:43:25 EST" duration-ms="49" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runTest6 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.TestRun@333d4a8c]" started-at="2023-11-15T12:43:25 EST" name="tearDown" finished-at="2023-11-15T12:43:25 EST" duration-ms="182" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.TestRun -->
+    </test> <!-- TestonEdge -->
+  </suite> <!-- MyTestSuite -->
+</testng-results>
