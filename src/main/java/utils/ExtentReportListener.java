@@ -13,11 +13,15 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import pages.BasePage;
 
-public class ExtentReportListener extends BasePage implements ITestListener, ISuiteListener {
+public class ExtentReportListener implements ITestListener, ISuiteListener {
 
+	ExtentReports report;
+	ExtentTest logger;
+	
 	@Override
 	public void onStart(ISuite suite) {
 		//Create an html report for the suite that is executed
@@ -32,6 +36,7 @@ public class ExtentReportListener extends BasePage implements ITestListener, ISu
 	@Override
 	public void onTestStart(ITestResult result) {
 		logger = report.startTest(result.getMethod().getMethodName());
+//		WebDriver driver = (WebDriver)result.getTestContext().getAttribute("WebDriver"); //use string from setAttribute from BasePage
 		logger.log(LogStatus.INFO, "Executing test: " + result.getMethod().getMethodName());
 
 	}
@@ -44,16 +49,16 @@ public class ExtentReportListener extends BasePage implements ITestListener, ISu
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		String fileName = String.format("Screenshot-%s.jpg", Calendar.getInstance().getTimeInMillis());
-		WebDriver driver = (WebDriver)result.getTestContext().getAttribute("WebDriver"); //use string from setAttribute from BasePage
-		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		File destFile = new File("./screenshots/" + fileName);
-		try {
-			FileUtils.copyFile(srcFile, destFile);
-			System.out.println("Screenshot taken, saved in screenshots folder");
-		} catch(IOException e) {
-			System.out.println("Failed to take screenshot");
-		}
+//		String fileName = String.format("Screenshot-%s.jpg", Calendar.getInstance().getTimeInMillis());
+//		WebDriver driver = (WebDriver)result.getTestContext().getAttribute("WebDriver"); //use string from setAttribute from BasePage
+//		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//		File destFile = new File("./screenshots/" + fileName);
+//		try {
+//			FileUtils.copyFile(srcFile, destFile);
+//			System.out.println("Screenshot taken, saved in screenshots folder");
+//		} catch(IOException e) {
+//			System.out.println("Failed to take screenshot");
+//		}
 		logger.log(LogStatus.FAIL, "Test failed, attaching screenshot in screenshots folder");
 	}
 

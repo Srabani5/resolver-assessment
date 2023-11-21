@@ -16,7 +16,6 @@ public class Test1 {
 	WebElement email;
 	WebElement password;
 	WebElement signinButton;
-	WebDriverWait wait;
 	WebElement test1Div;
 
 	/**
@@ -32,14 +31,8 @@ public class Test1 {
 		test1Div = driver.findElement( By.xpath("//div[@id='test-1-div']"));
 	}
 
-	/**
-	 * Performs the validation for Test1, including element visibility checks, text content checks, and capturing a screenshot.
-	 */
-	public void explicitWait()
-	{
-		// Set up an explicit wait with a 40-second timeout to wait for element visibility.
-		wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-		wait.until(ExpectedConditions.visibilityOf(test1Div));
+	public WebElement getTestDiv() {
+		return test1Div;
 	}
 
 	public boolean isEmailInputPresent() {

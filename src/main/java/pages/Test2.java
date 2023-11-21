@@ -40,29 +40,23 @@ public class Test2 {
 		test2Div = driver.findElement( By.xpath("//div[@id='test-2-div']"));
 	}
 
-	/**
-     * Performs the validation for Test2, including element visibility checks, text content checks, and capturing a screenshot.
-     */
-	public void explicitWait()
-	{
-		// Set up an explicit wait with a 40-second timeout to wait for element visibility.
-		wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-		wait.until(ExpectedConditions.visibilityOf(test2Div));
+	public WebElement getTestDiv() {
+		return test2Div;
 	}
 
-	  public int getListGroupItemCount() {
-	        WebElement listGroup = test2Div.findElement(By.className("list-group"));
-	        return listGroup.findElements(By.tagName("li")).size();
-	    }
-        // Check if the second list item's value is "List Item 2".
-	    public String getListItemText() {
-	       return listItem2.getText();
-	    }
-		// Check if the second list item's badge value is 6.
-	    public int getListItemBadgeValue(int index) {
-	        WebElement listGroup = test2Div.findElement(By.className("list-group"));
-	        String badgeText = listGroup.findElements(By.tagName("li")).get(index).findElement(By.xpath("//span[contains(text(),'6')]")).getText();
-	        return Integer.parseInt(badgeText);
-	    }
-		
+	public int getListGroupItemCount() {
+		WebElement listGroup = test2Div.findElement(By.className("list-group"));
+		return listGroup.findElements(By.tagName("li")).size();
+	}
+	// Check if the second list item's value is "List Item 2".
+	public String getListItemText() {
+		return listItem2.getText();
+	}
+	// Check if the second list item's badge value is 6.
+	public int getListItemBadgeValue(int index) {
+		WebElement listGroup = test2Div.findElement(By.className("list-group"));
+		String badgeText = listGroup.findElements(By.tagName("li")).get(index).findElement(By.xpath("//span[contains(text(),'6')]")).getText();
+		return Integer.parseInt(badgeText);
+	}
+
 }

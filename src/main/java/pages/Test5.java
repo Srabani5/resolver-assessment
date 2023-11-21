@@ -14,7 +14,7 @@ public class Test5 {
 	WebDriver driver;
 	WebElement uniqueButton;
 	WebElement alertSuccess;
-	WebDriverWait wait;
+	public WebDriverWait wait;
 	WebElement test5Div;
 
 	/**
@@ -23,34 +23,22 @@ public class Test5 {
 	 * @param driver The WebDriver used for the test.
 	 */
 	public Test5(WebDriver driver){
-		this.driver=driver;
-		uniqueButton = driver.findElement( By.id("test5-button"));
+		this.driver = driver;
+		uniqueButton = driver.findElement(By.id("test5-button"));
 		alertSuccess = driver.findElement(By.id("test5-alert"));
 		test5Div = driver.findElement( By.xpath("//div[@id='test-5-div']"));
 	}
 
-	/**
-	 * Performs the validation for Test5, including element visibility checks, text content checks, and capturing a screenshot.
-	 */
-	//wait for a button to be displayed
-	public void explicitWait()
-	{
-		wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-		wait.until(ExpectedConditions.visibilityOf(test5Div));
-	}
-	public void navigateToHomePage(String url) {
-		driver.get(url);
-	}
-	public WebElement getTest5Div() {
+	public WebElement getTestDiv() {
 		return test5Div;
 	}
 
 	public WebElement getDynamicButton() {
-		return getTest5Div().findElement(By.id("test5-button"));
+		return getTestDiv().findElement(By.id("test5-button"));
 	}
 
 	public WebElement getSuccessMessage() {
-		return getTest5Div().findElement(By.id("test5-alert"));
+		return getTestDiv().findElement(By.id("test5-alert"));
 	}
 
 	public void waitForButtonDisplayed() {

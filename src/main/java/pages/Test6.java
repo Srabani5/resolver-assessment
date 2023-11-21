@@ -27,7 +27,7 @@ public class Test6 {
 		this.driver=driver;
 		test6Div = driver.findElement( By.xpath("//div[@id='test-6-div']"));
 	}
-	public WebElement getTest5Div() {
+	public WebElement getTestDiv() {
 		return test6Div;
 	}
 
@@ -48,15 +48,6 @@ public class Test6 {
 			e.printStackTrace();
 			return null;
 		}
-	}
-
-	/**
-	 * Performs the validation for Test5, including element visibility checks, text content checks, and capturing a screenshot.
-	 */
-	public void explicitWait()
-	{
-		wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-		wait.until(ExpectedConditions.visibilityOf(test6Div));
 	}
 
 	//find the value of the cell at coordinates 2, 2 (staring at 0 in the top left corner) using above method

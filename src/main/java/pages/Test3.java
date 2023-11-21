@@ -39,29 +39,16 @@ public class Test3 {
 
 	}
 
-	/**
-	 * Performs the validation for Test3, including element visibility checks, text content checks, and capturing a screenshot.
-	 */
-
-	
-	// Set up an explicit wait with a 40-second timeout to wait for element visibility.
-	public void explicitWait()
-	{
-		wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-		wait.until(ExpectedConditions.visibilityOf(test3Div));
-	}
-
-
-	public WebElement getTest3Div() {
-		return driver.findElement (By.xpath("//div[@id='test-3-div']"));
+	public WebElement getTestDiv() {
+		return test3Div;
 	}
 
 	public WebElement getDropdownButton() {
-		return getTest3Div().findElement(By.id("dropdownMenuButton"));
+		return getTestDiv().findElement(By.id("dropdownMenuButton"));
 	}
 
 	public WebElement getOptionElement(String optionText) {
-		List<WebElement> optionElements = getTest3Div().findElements(By.cssSelector(".dropdown-item"));
+		List<WebElement> optionElements = getTestDiv().findElements(By.cssSelector(".dropdown-item"));
 		for (WebElement element : optionElements) {
 			if (element.getText().equals(optionText)) {
 				return element;

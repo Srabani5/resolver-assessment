@@ -28,14 +28,8 @@ public class Test4 {
 		test4Div = driver.findElement( By.xpath("//div[@id='test-4-div']"));
 	}
 
-	/**
-	 * Performs the validation for Test4, including element visibility checks, text content checks, and capturing a screenshot.
-	 */
-	// Set up an explicit wait with 40);
-	public void explicitWait()
-	{
-		wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-		wait.until(ExpectedConditions.visibilityOf(test4Div));
+	public WebElement getTestDiv() {
+		return test4Div;
 	}
 
 	public WebElement getTest4Div() {
