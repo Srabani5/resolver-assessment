@@ -4,13 +4,11 @@ This Selenium Test Automation Project is built to automate testing for an html p
 
 ## Prerequisites
 
-1. **Java Development Kit (JDK):** Ensure you have JDK 11 installed. You can download it from [Oracle's website](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html).
+- **Java Development Kit (JDK):** Ensure you have JDK 11 installed. You can download it from [Oracle's website](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html).
 
-2. **Maven:** Make sure you have Maven installed. You can download it from [Maven's official website](https://maven.apache.org/download.cgi).
+- **Maven:** Make sure you have Maven installed. You can download it from [Maven's official website](https://maven.apache.org/download.cgi).
 
-3. **WebDriver Drivers:** Download the WebDriver driver executable for the browsers you plan to test (e.g., ChromeDriver, FirefoxoDriver, EdgeDriver).
-
-4. **Browsers:** Google Chrome, Mozilla Firefox, Microsoft Edge
+- **Browsers:** Google Chrome, Mozilla Firefox, Microsoft Edge
 
 ## Libraries Used
 
@@ -24,15 +22,15 @@ These dependencies are managed in `pom.xml`.
 
 ## Getting Started
 
-1. **Clone the Repository:**
+**Clone the Repository:**
 
 	git clone  https://github.com/Srabani5/resolver-assessment.git
 
-2. **Navigate to the Project Directory:**
+**Navigate to the Project Directory:**
 
 	cd resolver-assessment
 
-4. **Run Tests:**
+**Run Tests:**
 
 The project is built and managed using Maven. The page it tests resides in the source tree and is detected automatically using relative path. Hence the tests MUST be run from the root directory of the project. On a terminal, the easiest way to run the tests is to run the following command from the root directory of the project.  
 
