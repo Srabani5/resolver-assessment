@@ -7,7 +7,6 @@ import java.util.Calendar;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
@@ -15,16 +14,13 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import tests.BaseTest;
 
 public class ExtentReportListener extends BaseTest implements ITestListener, ISuiteListener {
 
-//	WebDriver driver;
 	ExtentReports report;
-//	ExtentTest test;
 	String browser;
 	
 	@Override
@@ -40,7 +36,6 @@ public class ExtentReportListener extends BaseTest implements ITestListener, ISu
 
 	@Override
 	public void onTestStart(ITestResult result) {
-//		driver = (WebDriver)result.getTestContext().getAttribute("WebDriver"); // Use string from setAttribute from BaseTest
 	    browser = ((RemoteWebDriver) driver).getCapabilities().getBrowserName();
 
 	    // Make sure the test names contain the browser name in the report

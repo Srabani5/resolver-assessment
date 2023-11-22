@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class Test5 extends BasePage {
 	WebElement uniqueButton;
 	WebElement alertSuccess;
-	WebElement test5Div;
+	WebElement divElement;
 
 	/**
 	 * Initializes the Test5 Page Object with the WebDriver and locates elements.
@@ -22,34 +22,60 @@ public class Test5 extends BasePage {
 		super(driver);
 		uniqueButton = driver.findElement(By.id("test5-button"));
 		alertSuccess = driver.findElement(By.id("test5-alert"));
-		test5Div = driver.findElement( By.xpath("//div[@id='test-5-div']"));
+		divElement = driver.findElement( By.xpath("//div[@id='test-5-div']"));
 	}
 
 	@Override
 	public WebElement getTestDiv() {
-		return test5Div;
+		return divElement;
 	}
 
+	/**
+	 * Gets dynamic button
+	 * 
+	 * @return	the dynamic button element
+	 */
 	public WebElement getDynamicButton() {
 		return getTestDiv().findElement(By.id("test5-button"));
 	}
 
+	/**
+	 * Gets success message alert element
+	 * 
+	 * @return	the success message alert element
+	 */
 	public WebElement getSuccessMessage() {
 		return getTestDiv().findElement(By.id("test5-alert"));
 	}
 
+	/**
+	 * Wait for the button element to be displayed
+	 */
 	public void waitForButtonDisplayed() {
 		wait.until(ExpectedConditions.visibilityOf(getDynamicButton()));
 	}
 
+	/**
+	 * Submits a button click
+	 */
 	public void clickDynamicButton() {
 		getDynamicButton().click();
 	}
 
+	/**
+	 * Gets the text from the success message alert
+	 * 
+	 * @return	A string containing the sucches message
+	 */
 	public String getSuccessMessageText() {
 		return getSuccessMessage().getText();
 	}
 
+	/**
+	 * Checks if the dynamic button is Disabled
+	 * 
+	 * @return 	True if disabled, false otherwise
+	 */
 	public boolean isDynamicButtonDisabled() {
 		return !getDynamicButton().isEnabled();
 	}

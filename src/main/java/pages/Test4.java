@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 public class Test4 extends BasePage {
 	WebElement firstButton;
 	WebElement secondButton;
-	WebElement test4Div;
+	WebElement divElement;
 	
 	/**
 	 * Initializes the Test4 Page Object with the WebDriver and locates elements.
@@ -19,28 +19,37 @@ public class Test4 extends BasePage {
 	 */
 	public Test4(WebDriver driver){
 		super(driver);
-		//firstButton = driver.findElement( By.xpath("//button[@class='btn btn-lg btn-primary']"));
-		//driver. = driver.findElement(  By.xpath("//button[@class='btn btn-lg btn-secondary']"));
-		test4Div = driver.findElement( By.xpath("//div[@id='test-4-div']"));
+		divElement = driver.findElement( By.xpath("//div[@id='test-4-div']"));
 	}
 
 	@Override
 	public WebElement getTestDiv() {
-		return test4Div;
+		return divElement;
 	}
 
-	public WebElement getTest4Div() {
-		return test4Div;
-	}
-
+	/**
+	 * Gets button 1
+	 * 
+	 * @return	the button1 element
+	 */
 	public WebElement getButton1() {
-		return getTest4Div().findElement(By.xpath("//button[@class='btn btn-lg btn-primary']"));
+		return divElement.findElement(By.xpath("//button[@class='btn btn-lg btn-primary']"));
 	}
 
+	/**
+	 * Gets button 2
+	 * 
+	 * @return	the button2 element
+	 */
 	public WebElement getButton2() {
-		return getTest4Div().findElement( By.xpath("//button[@class='btn btn-lg btn-secondary']"));
+		return divElement.findElement( By.xpath("//button[@class='btn btn-lg btn-secondary']"));
 	}
 
+	/**
+	 * Checks if a given button is enabled 
+	 * 
+	 * @return 	True if enabled, false otherwise
+	 */
 	public boolean isButtonEnabled(WebElement button) {
 		return button.isEnabled();
 	}

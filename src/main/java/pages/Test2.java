@@ -1,8 +1,3 @@
-/**
- * Test2 implementation
- * @author Srabani "Bonnie" Banik
- */
-
 package pages;
 
 import org.openqa.selenium.By;
@@ -18,7 +13,7 @@ public class Test2 extends BasePage {
 	WebElement listItem2;
 	WebElement listItem3;
 	WebElement list2Badge;
-	WebElement test2Div;
+	WebElement divElement;
 
 	/**
      * Initializes the Test2 Page Object with the WebDriver and locates elements.
@@ -31,25 +26,41 @@ public class Test2 extends BasePage {
 		listItem2 = driver.findElement( By.xpath("//li[contains(text(),'List Item 2')]"));
 		listItem3 = driver.findElement( By.xpath("//li[contains(text(),'List Item 3')]"));
 		list2Badge = driver.findElement( By.xpath("//span[contains(text(),'6')]"));
-		test2Div = driver.findElement( By.xpath("//div[@id='test-2-div']"));
+		divElement = driver.findElement( By.xpath("//div[@id='test-2-div']"));
 	}
 
 	@Override
 	public WebElement getTestDiv() {
-		return test2Div;
+		return divElement;
 	}
 
+	/**
+	 * Gets the number of items in the list group
+	 * 
+	 * @return	Number of items in the list group
+	 */
 	public int getListGroupItemCount() {
-		WebElement listGroup = test2Div.findElement(By.className("list-group"));
+		WebElement listGroup = divElement.findElement(By.className("list-group"));
 		return listGroup.findElements(By.tagName("li")).size();
 	}
-	// Check if the second list item's value is "List Item 2".
-	public String getListItemText() {
+	
+	/**
+	 * Gets the text of Item2 from the list
+	 * 
+	 * @return	Text of item2
+	 */
+	public String getListItem2Text() {
 		return listItem2.getText();
 	}
-	// Check if the second list item's badge value is 6.
+
+	/**
+	 * Gets the badge value of a given list item
+	 * 
+	 * @param 	index	Index of the list item to look up
+	 * @return			Badge value of the given item
+	 */
 	public int getListItemBadgeValue(int index) {
-		WebElement listGroup = test2Div.findElement(By.className("list-group"));
+		WebElement listGroup = divElement.findElement(By.className("list-group"));
 		String badgeText = listGroup.findElements(By.tagName("li")).get(index).findElement(By.xpath("//span[contains(text(),'6')]")).getText();
 		return Integer.parseInt(badgeText);
 	}

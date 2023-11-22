@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 public class Test6 extends BasePage {
 	WebElement table;
 	WebElement cell;
-	WebElement test6Div;
+	WebElement divElement;
 
 	/**
 	 * Initializes the Test6 Page Object with the WebDriver and locates elements.
@@ -19,15 +19,19 @@ public class Test6 extends BasePage {
 	 */
 	public Test6(WebDriver driver){
 		super(driver);
-		test6Div = driver.findElement( By.xpath("//div[@id='test-6-div']"));
+		divElement = driver.findElement( By.xpath("//div[@id='test-6-div']"));
 	}
 	
 	@Override
 	public WebElement getTestDiv() {
-		return test6Div;
+		return divElement;
 	}
 
-	//method that allows you to find the value of any cell on the grid
+	/**
+	 * 	Finds the value of any cell on the grid
+	 * 
+	 * @return 	A string containing the value of the cell
+	 */
 	public String getCellValueInGrid(int row, int column) {
 		try {
 			// Find the table element using the provided locator
@@ -45,11 +49,4 @@ public class Test6 extends BasePage {
 			return null;
 		}
 	}
-
-	//find the value of the cell at coordinates 2, 2 (staring at 0 in the top left corner) using above method
-	public String getCellValue(int row, int column) {	
-		String cellValue = getCellValueInGrid(row, column);
-		return cellValue;
-	}
-
 }
