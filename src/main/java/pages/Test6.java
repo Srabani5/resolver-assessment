@@ -19,7 +19,7 @@ public class Test6 extends BasePage {
 	 */
 	public Test6(WebDriver driver){
 		super(driver);
-		divElement = driver.findElement( By.xpath("//div[@id='test-6-div']"));
+		divElement = driver.findElement( By.id("test-6-div"));
 	}
 	
 	@Override

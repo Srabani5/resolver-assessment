@@ -29,7 +29,7 @@ public class Test3 extends BasePage {
 		dropdownDefault = driver.findElement( By.id("dropdownMenuButton"));
 		dropdown = driver.findElement(By.xpath("//div[@class='dropdown-menu']"));
 		dropdown3 = driver.findElement(By.xpath("//a[contains(text(),'Option 3')]"));
-		divElement = driver.findElement( By.xpath("//div[@id='test-3-div']"));
+		divElement = driver.findElement( By.id("test-3-div"));
 
 	}
 

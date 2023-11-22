@@ -12,7 +12,7 @@ public class Test1 extends BasePage {
 	WebElement password;
 	WebElement signinButton;
 	WebElement divElement;
-
+	
 	/**
 	 * Initializes the Test1 Page Object with the WebDriver and locates elements.
 	 *
@@ -23,7 +23,7 @@ public class Test1 extends BasePage {
 		email = driver.findElement( By.id("inputEmail"));
 		password = driver.findElement( By.id("inputPassword"));
 		signinButton = driver.findElement(By.xpath("//button[contains(text(),'Sign in')]"));
-		divElement = driver.findElement( By.xpath("//div[@id='test-1-div']"));
+		divElement = driver.findElement( By.id("test-1-div"));
 	}
 
 	@Override

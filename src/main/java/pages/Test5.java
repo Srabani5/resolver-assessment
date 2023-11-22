@@ -22,7 +22,7 @@ public class Test5 extends BasePage {
 		super(driver);
 		uniqueButton = driver.findElement(By.id("test5-button"));
 		alertSuccess = driver.findElement(By.id("test5-alert"));
-		divElement = driver.findElement( By.xpath("//div[@id='test-5-div']"));
+		divElement = driver.findElement( By.id("test-5-div"));
 	}
 
 	@Override
@@ -36,7 +36,7 @@ public class Test5 extends BasePage {
 	 * @return	the dynamic button element
 	 */
 	public WebElement getDynamicButton() {
-		return getTestDiv().findElement(By.id("test5-button"));
+		return uniqueButton;
 	}
 
 	/**
@@ -45,7 +45,7 @@ public class Test5 extends BasePage {
 	 * @return	the success message alert element
 	 */
 	public WebElement getSuccessMessage() {
-		return getTestDiv().findElement(By.id("test5-alert"));
+		return alertSuccess;
 	}
 
 	/**

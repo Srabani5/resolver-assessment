@@ -29,11 +29,11 @@ public class TestCases extends BaseTest {
 			
 		test1.waitForElement(test1.getTestDiv());
 	
-		Assert.assertTrue(test1.isEmailInputPresent(), "Email input textbox present");
+		Assert.assertTrue(test1.isEmailInputPresent(), TestMessages.EMAIL_INPUT_PRESENT.message());
 		test.log(LogStatus.INFO, "Email input is present");
-		Assert.assertTrue(test1.isPasswordInputPresent(), "Password input textbox present");
+		Assert.assertTrue(test1.isPasswordInputPresent(), TestMessages.PASSWORD_INPUT_PRESENT.message());
 		test.log(LogStatus.INFO, "Password input is present");
-		Assert.assertTrue(test1.isLoginButtonPresent(), "Sign in button present");
+		Assert.assertTrue(test1.isLoginButtonPresent(), TestMessages.SIGNIN_BUTTON_PRESENT.message());
 		test.log(LogStatus.INFO, "Login button is present");
 		test1.enterEmail(TestData.VALID_USERNAME);
 		test1.enterPassword(TestData.VALID_PASSWORD);
@@ -103,9 +103,9 @@ public class TestCases extends BaseTest {
 		boolean isButton1Enabled = test4.isButtonEnabled(test4.getButton1());
 		boolean isButton2Disabled = !test4.isButtonEnabled(test4.getButton2());
 
-		Assert.assertTrue(isButton1Enabled, "Button 1 enabled.");
+		Assert.assertTrue(isButton1Enabled, TestMessages.BUTTON_1_ENABLED.message());
 		test.log(LogStatus.INFO, "Button 1 is enabled");
-		Assert.assertTrue(isButton2Disabled, "Button 2 disabled.");
+		Assert.assertTrue(isButton2Disabled, TestMessages.BUTTON_2_DISABLED.message());
 		test.log(LogStatus.INFO, "Button 2 is disabled");
 	}
 

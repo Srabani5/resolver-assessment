@@ -22,11 +22,11 @@ public class Test2 extends BasePage {
      */
 	public Test2(WebDriver driver){
 		super(driver);
-		listItem1 = driver.findElement( By.xpath("//li[contains(text(),'List Item 1')]"));
-		listItem2 = driver.findElement( By.xpath("//li[contains(text(),'List Item 2')]"));
-		listItem3 = driver.findElement( By.xpath("//li[contains(text(),'List Item 3')]"));
+		listItem1 = driver.findElement( By.cssSelector("li.list-group-item:nth-child(1)"));
+		listItem2 = driver.findElement( By.cssSelector("li.list-group-item:nth-child(2)"));
+		listItem3 = driver.findElement( By.cssSelector("li.list-group-item:nth-child(3)"));
 		list2Badge = driver.findElement( By.xpath("//span[contains(text(),'6')]"));
-		divElement = driver.findElement( By.xpath("//div[@id='test-2-div']"));
+		divElement = driver.findElement( By.id("test-2-div"));
 	}
 
 	@Override
