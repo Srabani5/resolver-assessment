@@ -5,26 +5,20 @@
 
 package pages;
 
-import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 /**
  * Page Object class for Test2.
  */
-public class Test2 {
-	WebDriver driver;
+public class Test2 extends BasePage {
 	WebElement listItem1;
 	WebElement listItem2;
 	WebElement listItem3;
 	WebElement list2Badge;
 	WebElement test2Div;
-	WebDriverWait wait;
 
 	/**
      * Initializes the Test2 Page Object with the WebDriver and locates elements.
@@ -32,7 +26,7 @@ public class Test2 {
      * @param driver The WebDriver used for the test.
      */
 	public Test2(WebDriver driver){
-		this.driver=driver;
+		super(driver);
 		listItem1 = driver.findElement( By.xpath("//li[contains(text(),'List Item 1')]"));
 		listItem2 = driver.findElement( By.xpath("//li[contains(text(),'List Item 2')]"));
 		listItem3 = driver.findElement( By.xpath("//li[contains(text(),'List Item 3')]"));
@@ -40,6 +34,7 @@ public class Test2 {
 		test2Div = driver.findElement( By.xpath("//div[@id='test-2-div']"));
 	}
 
+	@Override
 	public WebElement getTestDiv() {
 		return test2Div;
 	}

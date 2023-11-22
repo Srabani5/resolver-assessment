@@ -1,27 +1,23 @@
 package pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
-import java.util.List;
 
 
 /**
  * Page Object class for Test3.
  */
-public class Test3 {
-	WebDriver driver;
+public class Test3 extends BasePage {
 	WebElement dropdownDefault;
 	WebElement dropdown;
 	WebElement dropdown3;
 	Select option3;
 	WebElement dropdownshow;
 	WebElement test3Div;
-	WebDriverWait wait;
 
 	/**
 	 * Initializes the Test3 Page Object with the WebDriver and locates elements.
@@ -29,7 +25,7 @@ public class Test3 {
 	 * @param driver The WebDriver used for the test.
 	 */
 	public Test3(WebDriver driver){
-		this.driver=driver;
+		super(driver);
 		dropdownDefault = driver.findElement( By.id("dropdownMenuButton"));
 		dropdown = driver.findElement(By.xpath("//div[@class='dropdown-menu']"));
 		//dropdownDefault.click();
@@ -39,6 +35,7 @@ public class Test3 {
 
 	}
 
+	@Override
 	public WebElement getTestDiv() {
 		return test3Div;
 	}

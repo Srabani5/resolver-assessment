@@ -3,5 +3,7 @@
 .project
 .settings
 bin/
+report/
+screenshots/
 target/
 test-output/
